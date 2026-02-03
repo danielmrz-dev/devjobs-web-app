@@ -1,0 +1,12 @@
+@use "../../scss/variables" as *;
+
+.job-card {
+  margin: 24px;
+  transform: translateY(64px);
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+}
