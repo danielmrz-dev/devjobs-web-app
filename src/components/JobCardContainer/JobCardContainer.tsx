@@ -7,8 +7,8 @@ export const JobCardsContainer = () => {
   const { jobs } = useJobs();
 
   return (
-    <section className="job-card">
-      <ul className="job-card__list">
+    <section className="job-cards-container">
+      <ul className="job-cards-container__list">
         {
           jobs.map((job) => {
             return (
@@ -26,7 +26,7 @@ export const JobCardsContainer = () => {
           })
         }
       </ul>
-      <button>Load more</button>
+      <button className="job-cards-container__button">Load more</button>
     </section>
   );
 };

@@ -1,12 +1,24 @@
 @use "../../scss/variables" as *;
 
-.job-card {
+.job-cards-container {
   margin: 24px;
   transform: translateY(64px);
+  display: flex;
+  flex-direction: column;
   &__list {
     list-style-type: none;
     display: flex;
     flex-direction: column;
     gap: 48px;
+  }
+  &__button {
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 6px;
+    min-width: 144px;
+    background-color: $indigo-500;
+    color: $white;
+    border: none;
+    margin: 2.5rem auto;
   }
 }
