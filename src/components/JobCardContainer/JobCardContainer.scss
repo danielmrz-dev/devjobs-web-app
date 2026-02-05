@@ -20,5 +20,17 @@
     color: $white;
     border: none;
     margin: 2.5rem auto;
+    cursor: pointer;
+    &:disabled {
+      background-color: $indigo-500-opaque;
+      cursor: not-allowed;
+    }
+  }
+  &__spinner {
+    margin: 2rem auto 0;
+  }
+  &__empty-msg {
+    color: $black;
+    text-align: center;
   }
 }

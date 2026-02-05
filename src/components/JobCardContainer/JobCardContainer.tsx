@@ -1,15 +1,28 @@
 import "./JobCardContainer.scss";
 import { JobCard } from "./components/JobCard/JobCard";
 import { useJobs } from "../../hooks/useJobs";
+import { RotatingLines } from "react-loader-spinner";
 
 export const JobCardsContainer = () => {
-
-  const { jobs } = useJobs();
+  const { jobs, isLoading } = useJobs();
+  const isJobsListEmpty = jobs.length === 0;
 
   return (
     <section className="job-cards-container">
       <ul className="job-cards-container__list">
-        {
+        {isLoading ? (
+          <RotatingLines
+            visible={true}
+            wrapperClass="job-cards-container__spinner"
+            height="50"
+            width="50"
+            color="#5964E0"
+          />
+        ) : isJobsListEmpty ? (
+          <h3 className="job-cards-container__empty-msg">
+            There are no jobs
+          </h3>
+        ) : (
           jobs.map((job) => {
             return (
               <JobCard
@@ -22,11 +35,16 @@ export const JobCardsContainer = () => {
                 jobTitle={job.position}
                 bgColor={job.logoBackground}
               />
-            )    
+            );
           })
-        }
+        )}
       </ul>
-      <button className="job-cards-container__button">Load more</button>
+      <button
+        className="job-cards-container__button"
+        disabled={isJobsListEmpty || isLoading}
+      >
+        Load more
+      </button>
     </section>
   );
 };
