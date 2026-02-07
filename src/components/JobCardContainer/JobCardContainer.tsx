@@ -1,10 +1,11 @@
 import "./JobCardContainer.scss";
 import { JobCard } from "./components/JobCard/JobCard";
-import { useJobs } from "../../hooks/useJobs";
 import { RotatingLines } from "react-loader-spinner";
+import { useContext } from "react";
+import { JobsContext } from "../../contexts/jobs-context";
 
 export const JobCardsContainer = () => {
-  const { jobs, isLoading } = useJobs();
+  const { data: jobs, isLoading } = useContext(JobsContext);
   const isJobsListEmpty = jobs.length === 0;
 
   return (
@@ -19,9 +20,7 @@ export const JobCardsContainer = () => {
             color="#5964E0"
           />
         ) : isJobsListEmpty ? (
-          <h3 className="job-cards-container__empty-msg">
-            There are no jobs
-          </h3>
+          <h3 className="job-cards-container__empty-msg">There are no jobs</h3>
         ) : (
           jobs.map((job) => {
             return (

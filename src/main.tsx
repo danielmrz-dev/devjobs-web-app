@@ -3,13 +3,16 @@ import { createRoot } from "react-dom/client";
 import "./index.scss";
 import { App } from "./App";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { JobsContextProvider } from "./contexts/JobsContextProvider";
 
 const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <JobsContextProvider>
+        <App />
+      </JobsContextProvider>
     </QueryClientProvider>
   </StrictMode>,
 );
