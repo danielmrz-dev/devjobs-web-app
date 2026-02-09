@@ -3,6 +3,7 @@ import { JobCard } from "./components/JobCard/JobCard";
 import { RotatingLines } from "react-loader-spinner";
 import { useContext } from "react";
 import { JobsContext } from "../../contexts/jobs-context";
+import { Filter } from "../Filter/Filter";
 
 export const JobCardsContainer = () => {
   const { data: jobs, isLoading } = useContext(JobsContext);
@@ -10,6 +11,7 @@ export const JobCardsContainer = () => {
 
   return (
     <section className="job-cards-container">
+      <Filter/>
       <ul className="job-cards-container__list">
         {isLoading ? (
           <RotatingLines
@@ -26,6 +28,7 @@ export const JobCardsContainer = () => {
             return (
               <JobCard
                 key={job.id}
+                id={job.id}
                 companyLogo={job.logo}
                 companyName={job.company}
                 contractType={job.contract}

@@ -3,7 +3,6 @@ import logo from "../../assets/logo.svg";
 import moon from "../../assets/desktop/icon-moon.svg";
 import sun from "../../assets/desktop/icon-sun.svg";
 import { SwitchButton } from "./components/SwitchButton/SwitchButton";
-import { Filter } from "../Filter/Filter";
 
 export const Header = () => {
   return (
@@ -18,7 +17,6 @@ export const Header = () => {
           <img src={moon} alt="" />
         </button>        
       </div>
-      <Filter />
     </header>
   );
 }

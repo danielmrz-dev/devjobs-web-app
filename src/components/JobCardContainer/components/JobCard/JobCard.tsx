@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./JobCard.scss";
 
 type JobCardProps = {
+  id: number;
   companyLogo: string;
   postedAt: string;
   contractType: string;
@@ -11,6 +13,7 @@ type JobCardProps = {
 };
 
 export const JobCard = ({
+  id,
   companyLogo,
   companyName,
   contractType,
@@ -20,8 +23,16 @@ export const JobCard = ({
   bgColor
 }: JobCardProps) => {
 
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate(`/jobs/${jobTitle.toLowerCase().replaceAll(" ", "-")}`, {
+      state: { id }
+    })
+  }
+
   return (
-    <li className="job">
+    <li className="job" onClick={handleNavigation}>
       <img 
         src={companyLogo} 
         alt="" 
