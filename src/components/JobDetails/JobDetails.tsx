@@ -47,7 +47,7 @@ export const JobDetails = () => {
         <article className="job-details__info">
           <div className="job-details__info-header">
             <p className="job-details__info-contract">
-              {clickedJob.postedAt} • {clickedJob.contract}
+              {clickedJob.postedAt} <span>•</span> {clickedJob.contract}
             </p>
             <strong className="job-details__info-position">
               {clickedJob.position}

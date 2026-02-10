@@ -5,6 +5,10 @@
     background-color: $white;
     border-radius: 6px;
     position: relative;
+    transition: filter .3s ease;
+    &:hover {
+      filter: brightness(90%);
+    }
     img {
       background-color: $orange;
       padding: 19px 5px;

@@ -65,6 +65,9 @@
     &-contract {
       color: $slate-500;
       line-height: 162%;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     &-position {
       font-size: 20px;
