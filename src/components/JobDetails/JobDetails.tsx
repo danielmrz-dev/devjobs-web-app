@@ -15,13 +15,9 @@ export const JobDetails = () => {
 
   if (isLoading) {
     return (
-      <RotatingLines
-        visible={true}
-        wrapperClass="job-details__spinner"
-        height="50"
-        width="50"
-        color="#5964E0"
-      />
+      <div className="job-details__spinner">
+        <RotatingLines visible={true} height="50" width="50" color="#5964E0" />
+      </div>
     );
   }
 
@@ -30,10 +26,44 @@ export const JobDetails = () => {
   }
 
   return (
-    <div className="job-details">
-      <img src={clickedJob.logo} alt="Teste" />
-      <h2>{clickedJob.company}</h2>
-      <p>{clickedJob.website}</p>
-    </div>
+    <section className="job-details">
+      <div className="job-details__bg-container">
+        <article className="job-details__company">
+          <img
+            src={clickedJob.logo}
+            alt={`${clickedJob.company} logo`}
+            className="job-details__company-logo"
+            style={{
+              backgroundColor: `${clickedJob.logoBackground}`,
+            }}
+          />
+          <h2 className="job-details__company-name">{clickedJob.company}</h2>
+          <p className="job-details__company-website">{clickedJob.website}</p>
+          <a className="job-details__company-website-link">Company website</a>
+        </article>
+      </div>
+
+      <div className="job-details__bg-container">
+        <article className="job-details__info">
+          <div className="job-details__info-header">
+            <p className="job-details__info-contract">
+              {clickedJob.postedAt} • {clickedJob.contract}
+            </p>
+            <strong className="job-details__info-position">
+              {clickedJob.position}
+            </strong>
+            <p className="job-details__info-location">
+              {clickedJob.location}
+            </p>
+            <button className="job-details__action-btn">Apply Now</button>
+          </div>
+          <div className="job-details__info-description">
+            <p>
+              {clickedJob.description}
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
   );
 };
