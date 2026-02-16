@@ -6,6 +6,7 @@
     border-radius: 6px;
     position: relative;
     transition: filter .3s ease;
+    cursor: pointer;
     &:hover {
       filter: brightness(90%);
     }
