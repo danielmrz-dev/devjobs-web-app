@@ -16,19 +16,67 @@
   &__filter-btn {
     position: absolute;
     top: 31px;
-    right: 60px;
+    right: 65px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
   }
   &__search-btn {
     background-color: $indigo-500;
     position: absolute;
-    padding: 0.40rem;
+    padding: 0.4rem;
     top: 25px;
     right: 16px;
     width: 32px;
     height: 32px;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
+  }
+}
+
+.dialog {
+  margin: auto;
+  border: none;
+  border-radius: 6px;
+  &__container{
+    display: flex;
+    flex-direction: column;
+  }
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.384);
+  }
+  &__divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.205);
+  }
+  &__location-filter {
+    position: relative;
+    &-icon {
+      width: 16px;
+      position: absolute;
+      top: 20px;
+      left: 22px;
+    }
+    &-input {
+      padding: 1.5rem 1.5rem 1.5rem 3.25rem;
+      border: none;
+      display: flex;
+    }
+  }
+  &__contract-label {
+    margin: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  &__button {
+    margin: 0 1.5rem 1.5rem 1.5rem;
+    padding: 12px;
+    background-color: $indigo-500;
+    color: $white;
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
   }
 }
