@@ -3,6 +3,7 @@ import filter from "../../assets/mobile/icon-filter.svg";
 import search from "../../assets/desktop/icon-search-white.svg";
 
 export const Filter = () => {
+
   return (
     <form className="filter">
       <input

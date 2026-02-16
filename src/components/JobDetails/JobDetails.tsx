@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
-import "./JobDetails.scss";
 import { useContext, useMemo } from "react";
-import { JobsContext } from "../../contexts/jobs-context";
 import { RotatingLines } from "react-loader-spinner";
+import { useLocation } from "react-router-dom";
+import { JobsContext } from "../../contexts/jobs-context";
+import "./JobDetails.scss";
 
 export const JobDetails = () => {
   const { state } = useLocation();
@@ -90,8 +90,12 @@ export const JobDetails = () => {
       </section>
       <footer className="job-details__footer">
         <div className="job-details__footer-content">
-          <h4 className="job-details__footer-content-position">{clickedJob.position}</h4>
-          <p className="job-details__footer-content-company">{clickedJob.company}</p>
+          <h4 className="job-details__footer-content-position">
+            {clickedJob.position}
+          </h4>
+          <p className="job-details__footer-content-company">
+            {clickedJob.company}
+          </p>
         </div>
         <button className="job-details__footer-btn">Apply Now</button>
       </footer>
