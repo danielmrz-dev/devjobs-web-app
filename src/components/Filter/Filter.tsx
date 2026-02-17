@@ -58,12 +58,12 @@ export const Filter = () => {
     modalRef.current?.close();
   };
 
-  const onResetFilters = () => {
-    resetField("location");
-    resetField("position");
-    resetField("contract");
-    reset();
-  };
+  // const onResetFilters = () => {
+  //   resetField("location");
+  //   resetField("position");
+  //   resetField("contract");
+  //   reset();
+  // };
 
   return (
     <FormProvider {...form}>
