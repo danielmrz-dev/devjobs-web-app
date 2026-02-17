@@ -1,8 +1,15 @@
 import { createContext } from "react";
-import type { IJobsContext } from "../types/jobs-context.interface";
+import type { IJob } from "../types/job.interface";
+
+interface IJobsContext {
+  jobs: IJob[];
+  setJobs: React.Dispatch<React.SetStateAction<IJob[] | undefined>>,
+  isLoading: boolean;
+}
 
 const defaultContextValue = {
-  data: [],
+  jobs: [],
+  setJobs: () => {},
   isLoading: false,
 } satisfies IJobsContext;
 

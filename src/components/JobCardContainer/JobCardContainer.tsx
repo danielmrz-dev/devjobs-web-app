@@ -6,7 +6,7 @@ import { JobsContext } from "../../contexts/jobs-context";
 import { Filter } from "../Filter/Filter";
 
 export const JobCardsContainer = () => {
-  const { data: jobs, isLoading } = useContext(JobsContext);
+  const { jobs, isLoading } = useContext(JobsContext);
   const isJobsListEmpty = jobs.length === 0;
 
   return (

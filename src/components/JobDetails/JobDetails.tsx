@@ -6,12 +6,12 @@ import "./JobDetails.scss";
 
 export const JobDetails = () => {
   const { state } = useLocation();
-  const { data, isLoading } = useContext(JobsContext);
+  const { jobs, isLoading } = useContext(JobsContext);
 
   const clickedJob = useMemo(() => {
-    const foundJob = data && data.find((job) => job.id === state["id"]);
+    const foundJob = jobs && jobs.find((job) => job.id === state["id"]);
     return foundJob;
-  }, [state, data]);
+  }, [state, jobs]);
 
   if (isLoading) {
     return (
@@ -70,8 +70,8 @@ export const JobDetails = () => {
               </p>
             </div>
             <ul className="job-details__info-requirements-list">
-              {clickedJob.requirements.items.map((i) => {
-                return <li>{i}</li>;
+              {clickedJob.requirements.items.map((item, index) => {
+                return <li key={index}>{item}</li>;
               })}
             </ul>
             <div className="job-details__info-role">
