@@ -5,7 +5,7 @@ import type { IJob } from "../types/job.interface";
 
 export const JobsContextProvider = ({ children }: PropsWithChildren) => {
 
-  const { isLoading, data } = useJobs();
+  const { isLoading, data, error, isError } = useJobs();
   const [jobs, setJobs] = useState<IJob[]>();
 
   useEffect(() => {

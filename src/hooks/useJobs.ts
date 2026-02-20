@@ -12,10 +12,10 @@ export const useJobs = () => {
     }
   };
 
-  const { data, isLoading } = useQuery({
+  const { data, isLoading, isError, error } = useQuery({
     queryKey: ['jobs'],
     queryFn: fetchJobs
   })
 
-  return { data, isLoading };
+  return { data, isLoading, isError, error };
 };
